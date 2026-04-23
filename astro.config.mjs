@@ -13,6 +13,10 @@ export default defineConfig({
         "@": "/src",
         "@components": "/src/components",
       },
+      dedupe: ["react", "react-dom"],
+    },
+    optimizeDeps: {
+      include: ["react", "react-dom", "react/jsx-dev-runtime"],
     },
   },
   output: "static",
