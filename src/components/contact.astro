@@ -1,65 +1,158 @@
-<section id="contact" class="w-full py-12 border-t border-[#ffffff10]">
+<section id="contact" class="w-full py-16 border-t border-[var(--border)]">
   <div class="max-w-5xl mx-auto">
-    <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">Let's talk</h2>
-    <h3 class="text-4xl md:text-5xl font-medium text-[var(--white)] mb-6">
-      Contact
-    </h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="text-[var(--white-icon)]">
-        <p class="mb-4">
-          Have a question or a project in mind? Feel free to reach out.
+    <div class="section-label reveal">contact</div>
+    <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-[var(--white)] mb-10 reveal reveal-d1">
+      Let's build<br /><span class="text-[var(--sec)]">something.</span>
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <!-- Contact info -->
+      <div class="reveal reveal-d2">
+        <p class="text-[var(--white-icon)] leading-relaxed mb-8 text-lg">
+          Available for backend contracts, fullstack projects, AI consulting, and security work.
+          Based in Bucharest & Marbella — reach out, I usually respond within a day.
         </p>
-        <div class="flex items-center gap-2">
-          <span>Location:</span>
-          <span class="text-[var(--white)]">Bucharest, Romania & Marbella, Spain</span>
+        <div class="space-y-3">
+          {[
+            { icon: "@", label: "aida@aidware.dev", href: "mailto:aida@aidware.dev" },
+            { icon: "gh", label: "github.com/gothsec", href: "https://github.com/gothsec" },
+            { icon: "in", label: "linkedin.com/in/aidaghergus", href: "https://linkedin.com/in/aidaghergus" },
+          ].map((link) => (
+            <a
+              href={link.href}
+              target={link.icon !== "@" ? "_blank" : undefined}
+              class="contact-link"
+            >
+              <span class="contact-link-icon">{link.icon}</span>
+              {link.label}
+            </a>
+          ))}
+        </div>
+        <div class="mt-6 flex items-center gap-2 text-[var(--white-icon)] text-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-[var(--sec)]">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+          </svg>
+          Bucharest, Romania & Marbella, Spain
         </div>
       </div>
 
-      <div>
+      <!-- Form -->
+      <div class="reveal reveal-d3">
         <form
           id="contact-form"
           action="https://formspree.io/f/mnnjznkj"
           method="POST"
           class="flex flex-col gap-4"
         >
-          <input
-            type="text"
-            name="from_name"
-            placeholder="Name"
-            required
-            class="px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)]"
-          />
-          <input
-            type="email"
-            name="reply_to"
-            placeholder="Email"
-            required
-            class="px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)]"
-          />
-          <textarea
-            name="message"
-            placeholder="Message"
-            rows="6"
-            required
-            class="px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)] resize-none"
-          ></textarea>
-          <button
-            type="submit"
-            class="px-4 py-2 bg-[var(--white-icon-tr)] text-[var(--white)] rounded-lg opacity-60 transition-opacity border border-[var(--white-icon-tr)] hover:opacity-100 hover:bg-[var(--white-icon-tr)]"
-          >
-            Submit
+          <div class="form-group">
+            <label class="form-label">Name</label>
+            <input
+              type="text"
+              name="from_name"
+              placeholder="Your name"
+              required
+              class="form-input"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input
+              type="email"
+              name="reply_to"
+              placeholder="you@example.com"
+              required
+              class="form-input"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea
+              name="message"
+              placeholder="Tell me about your project..."
+              rows="5"
+              required
+              class="form-input resize-none"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn-primary w-full justify-center">
+            Send message →
           </button>
         </form>
         <div
           id="form-message"
-          class="hidden justify-center items-center mt-4 text-[var(--white)] text-lg"
+          class="hidden justify-center items-center mt-4 text-[var(--white)] text-base"
+          style="font-family: var(--mono);"
         >
-          ✅ Thank you for your message!
+          <span class="text-[var(--sec)]">message_sent</span>
+          <span class="text-[var(--white-icon)] text-sm ml-2">— I'll get back to you soon.</span>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--white-icon);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .form-input {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    color: var(--white);
+    padding: 11px 14px;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border-color 0.2s;
+    outline: none;
+    width: 100%;
+  }
+
+  .form-input:focus {
+    border-color: var(--sec);
+  }
+
+  .form-input::placeholder {
+    color: var(--white-icon);
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 14px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--white);
+    font-size: 14px;
+    transition: all 0.2s;
+  }
+
+  .contact-link:hover {
+    border-color: var(--sec);
+    color: var(--sec);
+  }
+
+  .contact-link-icon {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--sec);
+    width: 20px;
+    flex-shrink: 0;
+  }
+</style>
 
 <script type="module" is:inline>
   const form = document.getElementById("contact-form");
@@ -68,7 +161,6 @@
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const formData = new FormData(form);
-
     try {
       const response = await fetch(form.action, {
         method: "POST",
@@ -79,13 +171,11 @@
         form.reset();
         form.style.display = "none";
         formMessage.classList.remove("hidden");
+        formMessage.classList.add("flex");
       } else {
-        const data = await response.json();
-        console.error("Error response:", data);
         alert("There was a problem sending your message.");
       }
-    } catch (error) {
-      console.error("Error:", error);
+    } catch {
       alert("There was a problem sending your message.");
     }
   });

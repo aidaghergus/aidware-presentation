@@ -1,6 +1,4 @@
 ---
-import '@fontsource-variable/montserrat';
-
 interface Props {
   title: string;
 }
@@ -12,39 +10,44 @@ const { title } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Software Developer" />
+    <meta name="description" content="Backend Developer · Cybersecurity · AI" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <meta property="og:title" content="Aida Ghergus" />
-    <meta property="og:description" content="Software Developer" />
-    <meta property="og:image" content="https://oscarhernandez.vercel.app/og.image.png" />
-    <meta property="og:url" content="https://oscarhernandez.vercel.app" />
+    <meta property="og:title" content="Aida Ghergus — aidware" />
+    <meta property="og:description" content="Backend Developer · Cybersecurity · AI" />
+    <meta property="og:image" content="/og.image.png" />
+    <meta property="og:url" content="https://aidware.dev" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Aida Ghergus Portfolio" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
     <title>{title}</title>
   </head>
-  <body class="bg-[--background] sm:px-28 lg:px-20 px-9">
+  <body class="bg-[var(--background)] sm:px-28 lg:px-20 px-9">
     <slot />
   </body>
 </html>
 
 <style is:global>
-
   :root {
-    --background: #101010;
-    --sec: #a476ff;
-    --white: #dfdfdf;
-    --white-icon: #f3f3f398;
-    --white-icon-tr: #f3f3f310;
+    --background: #060c18;
+    --bg2: #0b1223;
+    --bg3: #101a2e;
+    --border: #1c2840;
+    --sec: #4d9fff;
+    --sec2: #7ec8ff;
+    --sec-dim: rgba(77, 159, 255, 0.10);
+    --white: #dde4f0;
+    --white-icon: #5c6a88;
+    --white-icon-tr: rgba(77, 159, 255, 0.08);
+    --font: 'Space Grotesk', -apple-system, system-ui, sans-serif;
+    --mono: 'JetBrains Mono', 'Courier New', monospace;
   }
 
+  html { scroll-behavior: smooth; }
+
   * {
-    font-family:
-      "Montserrat Variable",
-      -apple-system,
-      system-ui,
-      sans-serif;
+    font-family: var(--font);
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -55,29 +58,143 @@ const { title } = Astro.props;
     color: var(--background);
   }
 
-  /* Scrollbar styles */
-
-  ::-webkit-scrollbar {
-    width: 15px;
+  /* Grid background */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 64px 64px;
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 0;
   }
 
-  ::-webkit-scrollbar-track {
-    background: var(--container);
-    border-radius: 30px;
+  /* Noise texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.4;
   }
 
-  ::-webkit-scrollbar-thumb {
-    background: var(--background);
-    border-radius: 10px;
+  /* Terminal component styles */
+  .terminal-box {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.5), 0 0 0 1px rgba(77,159,255,0.06) inset;
+    width: 100%;
+    max-width: 520px;
   }
 
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--pink);
+  .terminal-bar {
+    background: var(--bg3);
+    padding: 11px 16px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    border-bottom: 1px solid var(--border);
   }
 
-  /* Scrollbar styles for Firefox */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: var(--line) var(--container);
+  .terminal-bar .dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
   }
+
+  .terminal-title {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--white-icon);
+    margin-left: 6px;
+    letter-spacing: 0.05em;
+  }
+
+  .terminal-body {
+    padding: 18px 22px;
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 2;
+  }
+
+  .t-prompt { color: var(--sec); }
+  .t-cmd { color: var(--white); }
+  .t-out { color: var(--white-icon); display: block; }
+  .t-green { color: #4dff9a; display: block; }
+  .t-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 14px;
+    background: var(--sec);
+    vertical-align: middle;
+    margin-left: 2px;
+  }
+
+  /* Section label */
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--sec);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::after {
+    content: '';
+    width: 48px;
+    height: 1px;
+    background: var(--sec);
+    opacity: 0.4;
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .reveal-d1 { transition-delay: 0.1s; }
+  .reveal-d2 { transition-delay: 0.2s; }
+  .reveal-d3 { transition-delay: 0.3s; }
+
+  /* Shiny accent text */
+  .shiny-sec {
+    background: linear-gradient(135deg, #4d9fff 25%, #c8e6ff 50%, #4d9fff 75%);
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shine 3s linear infinite;
+  }
+
+  @keyframes shine {
+    0% { background-position: 100% 50%; }
+    30%, 70% { background-position: 0% 50%; }
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg2); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--sec); }
+  * { scrollbar-width: thin; scrollbar-color: var(--border) var(--bg2); }
 </style>
