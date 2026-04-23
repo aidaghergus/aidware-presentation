@@ -1,0 +1,285 @@
+---
+---
+
+<div class="insights-section">
+  <div class="insights-inner">
+    <p class="insights-label">content</p>
+    <h2 class="insights-title">Insights &amp; notes.</h2>
+
+    <div class="insights-grid">
+
+      <!-- Quote card -->
+      <div class="icard icard-quote">
+        <blockquote>"There are only two hard things in Computer Science: cache invalidation and naming things."</blockquote>
+        <cite>— Phil Karlton</cite>
+      </div>
+
+      <!-- Dark tall card: PostgreSQL news -->
+      <div class="icard icard-dark icard-tall">
+        <div>
+          <div class="icard-eyebrow">PostgreSQL · Performance</div>
+          <div class="icard-title">PostgreSQL lands async I/O &amp; batch mode improvements</div>
+          <div class="icard-body">All async I/O improvements are landing in PostgreSQL 18, launching later this year — the biggest performance leap in recent versions.</div>
+          <ul class="icard-bullets">
+            <li>io_uring support – faster and more efficient I/O</li>
+            <li>Asynchronous reads (AIO) in the buffer manager</li>
+            <li>Optional batch mode — optimised for small requests</li>
+            <li>I/O concurrency enabled on all systems</li>
+          </ul>
+        </div>
+        <div class="icard-footer">
+          <div class="icard-dots">
+            <div class="icard-dot active"></div>
+            <div class="icard-dot"></div>
+            <div class="icard-dot"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Security news -->
+      <div class="icard icard-beige">
+        <div>
+          <div class="icard-eyebrow">Security</div>
+          <div class="icard-body" style="opacity:1; font-size:14px; line-height:1.7;">
+            OpenSSH 10.0 now uses the hybrid post-quantum algorithm <strong>mlkem768x25519-sha256</strong> by default — safe against attacks by quantum computers.
+          </div>
+        </div>
+        <div class="icard-footer">
+          <div class="icard-tags-row">
+            <span class="icard-tag">SSH</span>
+            <span class="icard-tag">Security</span>
+            <span class="icard-tag">Quantum</span>
+          </div>
+          <div class="icard-dots">
+            <div class="icard-dot active"></div>
+            <div class="icard-dot"></div>
+            <div class="icard-dot"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Algo card -->
+      <div class="icard icard-beige icard-algo">
+        <div class="icard-eyebrow">Algorithm</div>
+        <div class="icard-search">
+          <span style="opacity:0.5;">Two pointers</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+          </svg>
+        </div>
+        <div class="icard-arrow">→ →</div>
+        <div class="icard-footer">
+          <div class="icard-dots">
+            <div class="icard-dot"></div>
+            <div class="icard-dot active"></div>
+            <div class="icard-dot"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI news -->
+      <div class="icard icard-beige">
+        <div>
+          <div class="icard-eyebrow">AI · Engineering</div>
+          <div class="icard-title">AI coding assistants boost engineer efficiency by 20%</div>
+          <div class="icard-body">JPMorgan Chase reports their AI coding assistant lets engineers focus more on high-value AI and data projects — a 20% productivity lift across teams.</div>
+        </div>
+        <div class="icard-footer">
+          <div class="icard-dots">
+            <div class="icard-dot active"></div>
+            <div class="icard-dot"></div>
+            <div class="icard-dot"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  .insights-section {
+    background: var(--bg3);
+    border-top: 1px solid var(--white-icon-tr);
+    border-bottom: 1px solid var(--white-icon-tr);
+    padding: 80px 0;
+    width: 100vw;
+    margin-left: calc(-1 * (100vw - 100%) / 2);
+    margin-right: calc(-1 * (100vw - 100%) / 2);
+  }
+  .insights-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+  .insights-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white-icon);
+    margin-bottom: 8px;
+  }
+  .insights-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+  }
+  .insights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  /* card base */
+  .icard {
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px 22px 20px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: default;
+  }
+  .icard:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.12); }
+
+  /* beige card */
+  .icard-beige {
+    background: var(--sec);
+    color: #1a1610;
+  }
+  .icard-beige .icard-tag { border-color: rgba(26,22,16,0.3); color: #1a1610; }
+  .icard-beige .icard-meta { color: rgba(26,22,16,0.5); }
+  .icard-beige .icard-eyebrow { color: rgba(26,22,16,0.6); }
+  .icard-beige .icard-dots .icard-dot { background: #1a1610; }
+
+  /* dark card */
+  .icard-dark {
+    background: #111111;
+    border: 1px solid #222;
+    color: #f0ece4;
+  }
+  .icard-dark .icard-eyebrow { color: var(--sec); opacity: 1; }
+  .icard-dark .icard-title { color: #f0ece4; }
+  .icard-dark .icard-body { color: #888; }
+  .icard-dark .icard-bullets { color: #888; }
+  .icard-dark .icard-tag { border-color: rgba(196,180,154,0.3); color: var(--sec); }
+  .icard-dark .icard-dot { background: var(--sec); }
+
+  /* quote card */
+  .icard-quote {
+    background: var(--sec);
+    color: #1a1610;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 32px 24px;
+  }
+  .icard-quote blockquote {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+  }
+  .icard-quote cite {
+    font-family: var(--mono);
+    font-size: 11px;
+    opacity: 0.55;
+    font-style: normal;
+    letter-spacing: 0.08em;
+  }
+
+  .icard-eyebrow {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    opacity: 0.6;
+  }
+  .icard-title {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .icard-body {
+    font-size: 13px;
+    line-height: 1.7;
+    opacity: 0.75;
+    flex: 1;
+    margin-bottom: 14px;
+  }
+  .icard-bullets {
+    font-size: 12px;
+    line-height: 1.8;
+    opacity: 0.7;
+    padding-left: 14px;
+    flex: 1;
+    margin-bottom: 14px;
+  }
+  .icard-bullets li { margin-bottom: 2px; }
+
+  .icard-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+  }
+  .icard-tags-row { display: flex; gap: 6px; flex-wrap: wrap; }
+  .icard-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    border: 1px solid;
+    border-radius: 20px;
+    padding: 3px 10px;
+    letter-spacing: 0.04em;
+  }
+  .icard-dots { display: flex; gap: 5px; }
+  .icard-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: currentColor; opacity: 0.25;
+  }
+  .icard-dot.active { opacity: 0.8; }
+
+  /* algo card */
+  .icard-algo { justify-content: space-between; }
+  .icard-search {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(26,22,16,0.3);
+    border-radius: 20px;
+    padding: 7px 14px;
+    font-family: var(--mono);
+    font-size: 12px;
+    gap: 8px;
+    margin: 10px 0 6px;
+  }
+  .icard-arrow {
+    font-size: 20px;
+    opacity: 0.25;
+    letter-spacing: 2px;
+    margin-top: 4px;
+  }
+
+  /* tall card spanning 2 rows */
+  .icard-tall { grid-row: span 2; }
+
+  @media (max-width: 900px) {
+    .insights-grid { grid-template-columns: 1fr 1fr; }
+    .icard-tall { grid-row: span 1; }
+    .insights-inner { padding: 0 24px; }
+  }
+  @media (max-width: 600px) {
+    .insights-grid { grid-template-columns: 1fr; }
+    .insights-section { padding: 60px 0; }
+  }
+</style>

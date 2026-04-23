@@ -45,8 +45,8 @@ export default function SkillsList() {
               onClick={() => setOpen(open === category ? null : category)}
               className="md:w-[400px] w-full rounded-xl border cursor-pointer overflow-hidden transition-all duration-200"
               style={{
-                background: "rgba(11,18,35,0.8)",
-                borderColor: open === category ? "var(--sec)" : "var(--white-icon-tr)",
+                background: "var(--bg2)",
+                borderColor: open === category ? "var(--white)" : "var(--white-icon-tr)",
               }}
             >
               <div className="flex items-center gap-3 p-4">

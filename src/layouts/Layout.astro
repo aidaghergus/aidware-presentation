@@ -1,6 +1,4 @@
 ---
-import '@fontsource-variable/montserrat';
-
 interface Props {
   title: string;
 }
@@ -12,16 +10,15 @@ const { title } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Software Developer" />
+    <meta name="description" content="Java Developer · Backend · Security · AI" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta property="og:title" content="Aida Ghergus" />
-    <meta property="og:description" content="Software Developer" />
-    <meta property="og:image" content="https://oscarhernandez.vercel.app/og.image.png" />
-    <meta property="og:url" content="https://oscarhernandez.vercel.app" />
+    <meta property="og:description" content="Java Developer · Backend · Security · AI" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Aida Ghergus Portfolio" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
     <title>{title}</title>
   </head>
   <body class="bg-[--background] sm:px-28 lg:px-20 px-9">
@@ -30,54 +27,64 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
-
   :root {
-    --background: #101010;
-    --sec: #a476ff;
-    --white: #dfdfdf;
-    --white-icon: #f3f3f398;
-    --white-icon-tr: #f3f3f310;
+    --background: #f5f3ef;
+    --bg2:        #ffffff;
+    --bg3:        #ede9e2;
+    --sec:        #c4b49a;
+    --sec2:       #a89880;
+    --sec-dim:    rgba(196,180,154,0.15);
+    --white:      #111111;
+    --white-icon: #777068;
+    --white-icon-tr: #d8d2c8;
+    --mono:       'JetBrains Mono', monospace;
   }
 
   * {
-    font-family:
-      "Montserrat Variable",
-      -apple-system,
-      system-ui,
-      sans-serif;
+    font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
   }
 
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--background);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* square grid overlay */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(#c4b49a 1px, transparent 1px),
+      linear-gradient(90deg, #c4b49a 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.22;
+    pointer-events: none;
+    z-index: -1;
+  }
+
   *::selection {
     background-color: var(--sec);
-    color: var(--background);
+    color: #fff;
   }
 
-  /* Scrollbar styles */
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: var(--background); }
+  ::-webkit-scrollbar-thumb { background: var(--white-icon-tr); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--sec); }
+  * { scrollbar-width: thin; scrollbar-color: var(--white-icon-tr) var(--background); }
 
-  ::-webkit-scrollbar {
-    width: 15px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: var(--container);
-    border-radius: 30px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: var(--background);
-    border-radius: 10px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--pink);
-  }
-
-  /* Scrollbar styles for Firefox */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: var(--line) var(--container);
-  }
+  /* Reveal animation */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
 </style>

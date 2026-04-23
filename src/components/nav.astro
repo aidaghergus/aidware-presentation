@@ -27,7 +27,7 @@ const navItems: NavItem[] = [
 <div class="flex justify-center w-full">
   <nav
     id="main-nav"
-    class="fixed left-1/2 -translate-x-1/2 z-[100] bg-[var(--background)] border border-1 border-transparent backdrop-blur-xl transition-all duration-500 ease-in-out md:top-6 md:bottom-auto bottom-0 w-[80%]"
+    class="fixed left-1/2 -translate-x-1/2 z-[100] bg-[var(--background)] border border-[var(--white-icon-tr)] backdrop-blur-xl transition-all duration-500 ease-in-out md:top-6 md:bottom-auto bottom-0 w-[80%]"
   >
     <div class="container mx-auto flex justify-center items-center p-3">
       <ul
@@ -40,7 +40,7 @@ const navItems: NavItem[] = [
                 href={item.href}
                 class="flex flex-col items-center gap-1 text-[var(--white-icon)] transition-colors text-xs md:text-base relative group"
               >
-                <div class="absolute -left-6 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full transition-all duration-300 scale-0 opacity-0 bg-[#A9FF5B] nav-indicator hidden md:block" />
+                <div class="absolute -left-6 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full transition-all duration-300 scale-0 opacity-0 bg-[var(--sec)] nav-indicator hidden md:block" />
                 <span class="md:hidden flex items-center justify-center w-6 h-6">
                   <fragment set:html={item.icon} />
                 </span>
@@ -57,16 +57,21 @@ const navItems: NavItem[] = [
 <style>
   nav {
     transform: translateX(-50%);
-    background-color: var(--background);
+    background-color: rgba(245, 243, 239, 0.85);
+    border-color: var(--white-icon-tr);
+    border-radius: 9999px;
+    box-shadow: 0 2px 16px rgba(196, 180, 154, 0.15);
     transition:
       background-color 0.3s ease,
       border-radius 0.3s ease,
-      border-color 0.3s ease;
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
   }
 
   nav.scrolling {
-    background-color: var(--component-bg);
-    border-color: #ffffff10;
+    background-color: rgba(245, 243, 239, 0.95);
+    border-color: var(--sec);
+    box-shadow: 0 4px 24px rgba(196, 180, 154, 0.25);
     border-radius: 9999px;
   }
 
@@ -76,7 +81,7 @@ const navItems: NavItem[] = [
   }
 
   nav a.active {
-    color: white !important;
+    color: var(--white) !important;
   }
 
   @media (max-width: 767px) {
@@ -87,12 +92,12 @@ const navItems: NavItem[] = [
       left: 50%;
       position: fixed;
       border-radius: 1rem 1rem 0 0;
-      border-color: #ffffff10;
+      border-color: var(--white-icon-tr);
     }
 
     nav.scrolling {
       border-radius: 1rem 1rem 0 0;
-      background-color: var(--component-bg);
+      background-color: rgba(245, 243, 239, 0.95);
     }
 
     body {

@@ -11,14 +11,13 @@ import SkillsList from "../React/SkillsList.tsx";
         // java · backend · security · ai
       </p>
       <h1 class="text-[var(--white)] text-5xl md:text-7xl font-bold leading-none tracking-tight">
-        Aida<br />Ghergus<span class="text-[var(--sec)]">.</span>
+        aidware<span class="text-[var(--sec)]">.</span>
       </h1>
-      <p class="text-xl md:text-2xl text-[var(--white-icon)] font-light">
-        Building backend systems that <span class="text-[var(--sec)] shiny-sec">scale.</span>
+      <p class="text-lg md:text-xl text-[var(--white-icon)] font-light">
+        your aid in software · <span class="text-[var(--white)] font-medium">by Aida Ghergus</span>
       </p>
       <p class="text-base text-[var(--white-icon)] max-w-xl">
-        Java developer with 8+ years of fullstack experience. Specialising in cloud architecture,
-        distributed systems, and <strong class="text-[var(--white)] font-medium">AI integration</strong>.
+        Software engineer with 9+ years of experience who <strong class="text-[var(--white)] font-medium">understands your needs</strong> and translates them into reliable, scalable software.
       </p>
       <div class="flex gap-3 pt-2 flex-wrap">
         <a href="#projects" class="btn-primary">View work</a>
@@ -70,8 +69,8 @@ import SkillsList from "../React/SkillsList.tsx";
 
 <style is:global>
   .btn-primary {
-    background: var(--sec);
-    color: #060c18;
+    background: var(--white);
+    color: var(--background);
     padding: 10px 22px;
     border-radius: 8px;
     font-family: var(--mono, monospace);
@@ -84,7 +83,7 @@ import SkillsList from "../React/SkillsList.tsx";
     align-items: center;
     gap: 8px;
   }
-  .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
+  .btn-primary:hover { background: #333; transform: translateY(-2px); }
 
   .btn-secondary {
     background: transparent;
@@ -100,7 +99,7 @@ import SkillsList from "../React/SkillsList.tsx";
     display: inline-flex;
     align-items: center;
   }
-  .btn-secondary:hover { border-color: var(--sec); color: var(--sec); transform: translateY(-2px); }
+  .btn-secondary:hover { border-color: var(--white); transform: translateY(-2px); }
 
   .social-icon-btn {
     color: var(--white-icon);
@@ -108,16 +107,16 @@ import SkillsList from "../React/SkillsList.tsx";
     border: 1px solid var(--white-icon-tr);
     padding: 10px;
     border-radius: 10px;
-    background: rgba(11,18,35,0.6);
+    background: var(--bg2);
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
   }
-  .social-icon-btn:hover { color: var(--white); border-color: var(--sec); }
+  .social-icon-btn:hover { color: var(--white); border-color: var(--white); }
 
   .shiny-sec {
-    background: linear-gradient(135deg, var(--sec) 25%, #c8e6ff 50%, var(--sec) 75%);
+    background: linear-gradient(135deg, var(--sec) 20%, var(--sec2) 50%, var(--sec) 80%);
     background-size: 400% 100%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -129,30 +128,30 @@ import SkillsList from "../React/SkillsList.tsx";
     30%, 70% { background-position: 0% 50%; }
   }
 
-  /* Terminal styles */
+  /* Terminal — stays dark intentionally */
   .terminal-box {
-    background: var(--bg2, #0b1223);
-    border: 1px solid var(--white-icon-tr);
+    background: #111111;
+    border: 1px solid #2a2a2a;
     border-radius: 12px;
     overflow: hidden;
     width: 100%;
     max-width: 500px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
   }
   .terminal-bar {
-    background: var(--bg3, #101a2e);
+    background: #1e1e1e;
     padding: 10px 16px;
     display: flex;
     align-items: center;
     gap: 6px;
-    border-bottom: 1px solid var(--white-icon-tr);
+    border-bottom: 1px solid #2a2a2a;
   }
   .dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
-  .terminal-title { font-size: 11px; color: var(--white-icon); margin-left: 6px; letter-spacing: 0.05em; font-family: var(--mono, monospace); }
+  .terminal-title { font-size: 11px; color: #888880; margin-left: 6px; letter-spacing: 0.05em; font-family: var(--mono, monospace); }
   .terminal-body { padding: 16px 20px; font-family: var(--mono, monospace); font-size: 13px; line-height: 1.9; }
   .t-prompt { color: var(--sec); }
-  .t-cmd    { color: var(--white); }
-  .t-out    { color: var(--white-icon); display: block; }
-  .t-green  { color: #4dff9a; display: block; }
+  .t-cmd    { color: #f0ece4; }
+  .t-out    { color: #888880; display: block; }
+  .t-green  { color: var(--sec); display: block; }
   .t-cursor { display: inline-block; width: 8px; height: 13px; background: var(--sec); vertical-align: middle; margin-left: 2px; }
 </style>

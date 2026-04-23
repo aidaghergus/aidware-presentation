@@ -95,7 +95,7 @@ const projects: Project[] = [
 
 <style>
   .project-card {
-    background: rgba(11, 18, 35, 0.6);
+    background: var(--bg2);
     border: 1px solid var(--white-icon-tr);
     border-radius: 12px;
     padding: 24px;
@@ -104,15 +104,16 @@ const projects: Project[] = [
     transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
   }
   .project-card:hover {
-    border-color: var(--sec);
+    border-color: var(--white);
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(77, 159, 255, 0.1);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
   }
   .project-tag {
     font-family: var(--mono, monospace);
     font-size: 10px;
-    color: var(--sec);
-    background: rgba(77, 159, 255, 0.1);
+    color: var(--white);
+    background: var(--sec-dim);
+    border: 1px solid var(--white-icon-tr);
     padding: 3px 8px;
     border-radius: 4px;
     letter-spacing: 0.04em;
