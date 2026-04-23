@@ -60,7 +60,7 @@ import SkillsList from "../React/SkillsList.tsx";
 
     <div class="flex flex-col lg:flex-row items-start gap-8 pt-2">
       <SkillsList client:load />
-      <div class="flex justify-center w-full lg:w-auto">
+      <div class="flex justify-center w-full">
         <Terminal client:load />
       </div>
     </div>
@@ -135,7 +135,7 @@ import SkillsList from "../React/SkillsList.tsx";
     border-radius: 12px;
     overflow: hidden;
     width: 100%;
-    max-width: 500px;
+    max-width: 680px;
     box-shadow: 0 20px 60px rgba(0,0,0,0.2);
   }
   .terminal-bar {
@@ -148,7 +148,7 @@ import SkillsList from "../React/SkillsList.tsx";
   }
   .dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
   .terminal-title { font-size: 11px; color: #888880; margin-left: 6px; letter-spacing: 0.05em; font-family: var(--mono, monospace); }
-  .terminal-body { padding: 16px 20px; font-family: var(--mono, monospace); font-size: 13px; line-height: 1.9; }
+  .terminal-body { padding: 20px 24px; font-family: var(--mono, monospace); font-size: 14px; line-height: 2; }
   .t-prompt { color: var(--sec); }
   .t-cmd    { color: #f0ece4; }
   .t-out    { color: #888880; display: block; }

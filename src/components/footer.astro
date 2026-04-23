@@ -44,19 +44,7 @@
 
       <!-- Built with -->
       <div class="flex flex-col items-center space-y-3">
-        {
-          [
-            { desc: "Built with", name: "Astro", icon: "/svg/astro.svg" },
-            { desc: "Styled with", name: "TailwindCSS", icon: "/svg/tailwindcss.svg" },
-            { desc: "Deployed on", name: "Vercel", icon: "/svg/vercel.svg" },
-          ].map((tech) => (
-            <div class="flex items-center justify-center space-x-2">
-              <span class="text-[var(--white-icon)] text-sm">{tech.desc}</span>
-              <img src={tech.icon} alt={tech.name} class="h-4 w-4 object-contain opacity-40 invert" loading="lazy" />
-              <span class="text-[var(--white-icon)] text-sm">{tech.name}</span>
-            </div>
-          ))
-        }
+
       </div>
 
       <!-- Spotify -->
