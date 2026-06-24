@@ -5,7 +5,7 @@ interface Line { type: LineType; text: string; }
 
 const lines: Line[] = [
   { type: "prompt", text: "whoami" },
-  { type: "out",    text: "aida_ghergus — java developer, 8+ yrs" },
+  { type: "out",    text: "aida_ghergus — java developer, 9+ yrs" },
   { type: "prompt", text: "cat skills.json" },
   { type: "out",    text: '{ "java": ["Spring","Quarkus","Kafka"],' },
   { type: "out",    text: '  "cloud": ["AWS","GCP","Docker","K8s"],' },
