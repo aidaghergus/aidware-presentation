@@ -3,91 +3,120 @@
 
 <div class="insights-section">
   <div class="insights-inner">
-    <p class="insights-label">content</p>
-    <h2 class="insights-title">Insights &amp; notes.</h2>
+    <p class="insights-label">credentials & beyond</p>
+    <h2 class="insights-title">Beyond the code<span style="color: var(--sec)">.</span></h2>
 
     <div class="insights-grid">
 
-      <!-- Quote card -->
-      <div class="icard icard-quote">
-        <blockquote>"There are only two hard things in Computer Science: cache invalidation and naming things."</blockquote>
-        <cite>— Phil Karlton</cite>
-      </div>
-
-      <!-- Dark tall card: PostgreSQL news -->
+      <!-- Conference talk — tall card col 1 -->
       <div class="icard icard-dark icard-tall">
         <div>
-          <div class="icard-eyebrow">PostgreSQL · Performance</div>
-          <div class="icard-title">PostgreSQL lands async I/O &amp; batch mode improvements</div>
-          <div class="icard-body">All async I/O improvements are landing in PostgreSQL 18, launching later this year — the biggest performance leap in recent versions.</div>
-          <ul class="icard-bullets">
-            <li>io_uring support – faster and more efficient I/O</li>
-            <li>Asynchronous reads (AIO) in the buffer manager</li>
-            <li>Optional batch mode — optimised for small requests</li>
-            <li>I/O concurrency enabled on all systems</li>
-          </ul>
+          <div class="icard-eyebrow">Conference · Public Speaking</div>
+          <div class="icard-title">Conference Talk</div>
+          <div class="icard-body">
+            Speaker at a tech conference — sharing insights on software engineering, AI integration, and building systems that work in the real world.
+          </div>
         </div>
-        <div class="icard-footer">
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/slGJ7YZxKJQ"
+            title="Conference Talk"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+        <div class="icard-footer" style="margin-top: 16px;">
           <div class="icard-dots">
             <div class="icard-dot active"></div>
             <div class="icard-dot"></div>
-            <div class="icard-dot"></div>
           </div>
+          <a href="https://www.youtube.com/watch?v=slGJ7YZxKJQ" target="_blank" class="icard-link icard-link-light" aria-label="Watch on YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"/></svg>
+          </a>
         </div>
       </div>
 
-      <!-- Security news -->
+      <!-- ML Certificate -->
       <div class="icard icard-beige">
         <div>
-          <div class="icard-eyebrow">Security</div>
-          <div class="icard-body" style="opacity:1; font-size:14px; line-height:1.7;">
-            OpenSSH 10.0 now uses the hybrid post-quantum algorithm <strong>mlkem768x25519-sha256</strong> by default — safe against attacks by quantum computers.
+          <div class="icard-eyebrow">Certificate · ITSchool</div>
+          <div class="icard-title">Machine Learning</div>
+          <div class="icard-body">
+            Supervised & unsupervised learning, neural networks, and practical ML applications with Python.
           </div>
         </div>
         <div class="icard-footer">
           <div class="icard-tags-row">
-            <span class="icard-tag">SSH</span>
-            <span class="icard-tag">Security</span>
-            <span class="icard-tag">Quantum</span>
+            <span class="icard-tag">Python</span>
+            <span class="icard-tag">ML</span>
           </div>
-          <div class="icard-dots">
-            <div class="icard-dot active"></div>
-            <div class="icard-dot"></div>
-            <div class="icard-dot"></div>
-          </div>
+          <a href="/diploma-ml.pdf" target="_blank" class="icard-link" aria-label="View certificate">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"/></svg>
+          </a>
         </div>
       </div>
 
-      <!-- Algo card -->
-      <div class="icard icard-beige icard-algo">
-        <div class="icard-eyebrow">Algorithm</div>
-        <div class="icard-search">
-          <span style="opacity:0.5;">Two pointers</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
-          </svg>
-        </div>
-        <div class="icard-arrow">→ →</div>
-        <div class="icard-footer">
-          <div class="icard-dots">
-            <div class="icard-dot"></div>
-            <div class="icard-dot active"></div>
-            <div class="icard-dot"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- AI news -->
+      <!-- Oracle certifications -->
       <div class="icard icard-beige">
         <div>
-          <div class="icard-eyebrow">AI · Engineering</div>
-          <div class="icard-title">AI coding assistants boost engineer efficiency by 20%</div>
-          <div class="icard-body">JPMorgan Chase reports their AI coding assistant lets engineers focus more on high-value AI and data projects — a 20% productivity lift across teams.</div>
+          <div class="icard-eyebrow">Certification · Oracle</div>
+          <div class="icard-title">SQL & PL/SQL</div>
+          <div class="icard-body">
+            Oracle certified in both SQL and PL/SQL — relational data modeling, advanced queries, stored procedures, triggers, and performance tuning.
+          </div>
         </div>
         <div class="icard-footer">
+          <div class="icard-tags-row">
+            <span class="icard-tag">Oracle</span>
+            <span class="icard-tag">SQL</span>
+            <span class="icard-tag">PL/SQL</span>
+          </div>
           <div class="icard-dots">
             <div class="icard-dot active"></div>
             <div class="icard-dot"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- She Leads Tomorrow -->
+      <div class="icard icard-beige">
+        <div>
+          <div class="icard-eyebrow">Leadership · She Leads Tomorrow</div>
+          <div class="icard-title">Leadership Programme</div>
+          <div class="icard-body">
+            Completed the She Leads Tomorrow leadership programme — developing strategic thinking, communication, and leadership skills for women in tech.
+          </div>
+        </div>
+        <div class="icard-footer">
+          <div class="icard-tags-row">
+            <span class="icard-tag">Leadership</span>
+            <span class="icard-tag">WomenInTech</span>
+          </div>
+          <div class="icard-dots">
+            <div class="icard-dot active"></div>
+            <div class="icard-dot"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ajungem Mari volunteering -->
+      <div class="icard icard-dark">
+        <div>
+          <div class="icard-eyebrow">Volunteering · Ajungem Mari</div>
+          <div class="icard-title">Volunteer</div>
+          <div class="icard-body">
+            Volunteer at Ajungem Mari — a Romanian NGO that mentors young people from disadvantaged backgrounds, helping them discover their potential and access better opportunities.
+          </div>
+        </div>
+        <div class="icard-footer">
+          <div class="icard-tags-row">
+            <span class="icard-tag icard-tag-light">Mentoring</span>
+            <span class="icard-tag icard-tag-light">NGO</span>
+          </div>
+          <div class="icard-dots">
+            <div class="icard-dot active"></div>
             <div class="icard-dot"></div>
           </div>
         </div>
@@ -133,7 +162,6 @@
     gap: 16px;
   }
 
-  /* card base */
   .icard {
     border-radius: 16px;
     overflow: hidden;
@@ -148,17 +176,14 @@
   }
   .icard:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.12); }
 
-  /* beige card */
   .icard-beige {
     background: var(--sec);
     color: #1a1610;
   }
   .icard-beige .icard-tag { border-color: rgba(26,22,16,0.3); color: #1a1610; }
-  .icard-beige .icard-meta { color: rgba(26,22,16,0.5); }
   .icard-beige .icard-eyebrow { color: rgba(26,22,16,0.6); }
   .icard-beige .icard-dots .icard-dot { background: #1a1610; }
 
-  /* dark card */
   .icard-dark {
     background: #111111;
     border: 1px solid #222;
@@ -167,33 +192,7 @@
   .icard-dark .icard-eyebrow { color: var(--sec); opacity: 1; }
   .icard-dark .icard-title { color: #f0ece4; }
   .icard-dark .icard-body { color: #888; }
-  .icard-dark .icard-bullets { color: #888; }
-  .icard-dark .icard-tag { border-color: rgba(196,180,154,0.3); color: var(--sec); }
   .icard-dark .icard-dot { background: var(--sec); }
-
-  /* quote card */
-  .icard-quote {
-    background: var(--sec);
-    color: #1a1610;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 32px 24px;
-  }
-  .icard-quote blockquote {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1.4;
-    letter-spacing: -0.01em;
-    margin-bottom: 14px;
-  }
-  .icard-quote cite {
-    font-family: var(--mono);
-    font-size: 11px;
-    opacity: 0.55;
-    font-style: normal;
-    letter-spacing: 0.08em;
-  }
 
   .icard-eyebrow {
     font-family: var(--mono);
@@ -218,16 +217,6 @@
     flex: 1;
     margin-bottom: 14px;
   }
-  .icard-bullets {
-    font-size: 12px;
-    line-height: 1.8;
-    opacity: 0.7;
-    padding-left: 14px;
-    flex: 1;
-    margin-bottom: 14px;
-  }
-  .icard-bullets li { margin-bottom: 2px; }
-
   .icard-footer {
     display: flex;
     justify-content: space-between;
@@ -243,6 +232,10 @@
     padding: 3px 10px;
     letter-spacing: 0.04em;
   }
+  .icard-tag-light {
+    border-color: rgba(196,180,154,0.4);
+    color: var(--sec);
+  }
   .icard-dots { display: flex; gap: 5px; }
   .icard-dot {
     width: 7px; height: 7px; border-radius: 50%;
@@ -250,27 +243,38 @@
   }
   .icard-dot.active { opacity: 0.8; }
 
-  /* algo card */
-  .icard-algo { justify-content: space-between; }
-  .icard-search {
+  .icard-link {
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
     border: 1px solid rgba(26,22,16,0.3);
-    border-radius: 20px;
-    padding: 7px 14px;
-    font-family: var(--mono);
-    font-size: 12px;
-    gap: 8px;
-    margin: 10px 0 6px;
+    color: #1a1610;
+    transition: background 0.2s;
+    flex-shrink: 0;
   }
-  .icard-arrow {
-    font-size: 20px;
-    opacity: 0.25;
-    letter-spacing: 2px;
-    margin-top: 4px;
+  .icard-link:hover { background: rgba(26,22,16,0.1); }
+
+  .icard-link-light {
+    border-color: rgba(196,180,154,0.4);
+    color: var(--sec);
+  }
+  .icard-link-light:hover { background: rgba(196,180,154,0.1); }
+
+  .video-wrapper {
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    width: 100%;
+  }
+  .video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
   }
 
-  /* tall card spanning 2 rows */
   .icard-tall { grid-row: span 2; }
 
   @media (max-width: 900px) {
