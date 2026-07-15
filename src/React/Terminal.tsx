@@ -5,17 +5,17 @@ interface Line { type: LineType; text: string; }
 
 const lines: Line[] = [
   { type: "prompt", text: "whoami" },
-  { type: "out",    text: "aida_ghergus — java developer, 9+ yrs" },
-  { type: "prompt", text: "cat skills.json" },
-  { type: "out",    text: '{ "java": ["Spring","Quarkus","Kafka"],' },
-  { type: "out",    text: '  "cloud": ["AWS","GCP","Docker","K8s"],' },
-  { type: "out",    text: '  "security": "MSc IT&C", "ai": "production" }' },
+  { type: "out",    text: "aidware — software & AI studio" },
+  { type: "prompt", text: "cat services.json" },
+  { type: "out",    text: '{ "ai": ["applications","chatbots","agents"],' },
+  { type: "out",    text: '  "backend": ["apis","integrations","cloud"],' },
+  { type: "out",    text: '  "mvp": "idea → production" }' },
   { type: "prompt", text: "git log --oneline -3" },
-  { type: "out",    text: "a1b2c3 feat: openai integration pipeline" },
-  { type: "out",    text: "9f8e7d fix: kafka consumer group rebalancing" },
-  { type: "out",    text: "3c4d5e init: quarkus microservice + aws lambda" },
+  { type: "out",    text: "a1b2c3 feat: multi-agent workflow (pericles)" },
+  { type: "out",    text: "9f8e7d feat: land analysis pipeline (aidarch)" },
+  { type: "out",    text: "3c4d5e ci: deploy via github actions" },
   { type: "prompt", text: "echo $STATUS" },
-  { type: "green",  text: "available_for_freelance" },
+  { type: "green",  text: "available_for_new_projects" },
 ];
 
 export default function Terminal() {

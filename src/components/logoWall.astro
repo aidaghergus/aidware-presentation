@@ -1,19 +1,19 @@
 ---
-const technologies = [
-  "java",
-  "spring",
-  "aws",
-  "docker",
-  "kubernetes",
-  "kafka",
-  "postgresql",
-  "mongodb",
-  "openai",
-  "python",
-  "react",
-  "typeScript",
-  "git",
-  "bash",
+const technologies: { file: string; label: string }[] = [
+  { file: "python", label: "Python" },
+  { file: "javaScript", label: "JavaScript" },
+  { file: "java", label: "Java" },
+  { file: "openai", label: "OpenAI" },
+  { file: "aws", label: "AWS" },
+  { file: "docker", label: "Docker" },
+  { file: "kubernetes", label: "Kubernetes" },
+  { file: "kafka", label: "Kafka" },
+  { file: "spring", label: "Spring" },
+  { file: "postgresql", label: "PostgreSQL" },
+  { file: "mongodb", label: "MongoDB" },
+  { file: "react", label: "React" },
+  { file: "astro", label: "Astro" },
+  { file: "vercel", label: "Vercel" },
 ];
 ---
 
@@ -32,15 +32,15 @@ const technologies = [
       [...technologies, ...technologies, ...technologies].map((tech) => (
         <div class="flex items-center gap-2 group transition-all duration-300">
           <img
-            src={`/svg/${tech}.svg`}
-            alt={tech}
+            src={`/svg/${tech.file}.svg`}
+            alt={tech.label}
             class="h-7 w-auto object-contain transition-transform group-hover:scale-110 opacity-60"
             width="30"
             height="30"
             loading="lazy"
           />
           <span class="text-lg font-medium text-[var(--white-icon)]">
-            {tech.charAt(0).toUpperCase() + tech.slice(1)}
+            {tech.label}
           </span>
         </div>
       ))

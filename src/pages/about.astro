@@ -1,0 +1,260 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Insights from "@/components/insights.astro";
+import Footer from "@/components/footer.astro";
+
+const skillGroups: { title: string; items: string[] }[] = [
+  { title: "Languages", items: ["Java", "Python", "JavaScript"] },
+  { title: "Backend", items: ["Spring", "Quarkus", "REST APIs", "Apache Kafka", "Maven", "Gradle"] },
+  { title: "AI", items: ["Claude", "Gemini", "Vertex AI", "AI Agents", "LLM Integration", "Prompt Engineering"] },
+  { title: "Cloud & DevOps", items: ["AWS", "Google Cloud", "Firebase", "Docker", "Kubernetes", "GitHub Actions", "Jenkins", "Vercel"] },
+  { title: "Databases", items: ["PostgreSQL", "SQL", "MongoDB", "Elasticsearch", "Sybase"] },
+  { title: "Frontend", items: ["React", "Astro", "Tailwind CSS", "Redux", "Ant Design"] },
+];
+
+interface Experience {
+  role: string;
+  company: string;
+  period: string;
+  location: string;
+  intro?: string;
+  points: string[];
+}
+
+const experience: Experience[] = [
+  {
+    role: "Founder | Backend & AI Engineer",
+    company: "aidware",
+    period: "07/2025 – Present",
+    location: "Remote",
+    intro: "Building production-ready AI applications for legal and real estate clients.",
+    points: [
+      "Built AI-powered applications for multiple freelance clients.",
+      "Sole engineer responsible for the end-to-end development of Pericles.",
+      "Built a multi-agent AI application using JavaScript, Firebase and Vertex AI (Gemini).",
+      "Evaluated and integrated LLM providers including Gemini and Claude.",
+      "Developed AI chatbots for Spanish real estate platforms.",
+      "Implemented CI/CD pipelines using GitHub Actions.",
+      "Developed Python scripts for document processing and information extraction.",
+    ],
+  },
+  {
+    role: "Full Stack Developer",
+    company: "Qualysoft Romania (Smarttech247)",
+    period: "05/2023 – 06/2025",
+    location: "Bucharest, Romania",
+    points: [
+      "Built a Java and Quarkus application and AWS Lambda functions from scratch.",
+      "Worked primarily on backend development and contributed to React frontend features.",
+      "Used PostgreSQL, Flyway, Docker, OpenAI and AWS services including Lambda, Cognito, CloudWatch, S3 and Amazon Q.",
+      "Integrated webhooks and third-party APIs.",
+      "Used JUnit 5, Mockito and WireMock.",
+      "Collaborated with a multicultural team in Cork, Ireland.",
+    ],
+  },
+  {
+    role: "Java Developer",
+    company: "Cognyte Romania",
+    period: "06/2021 – 05/2023",
+    location: "Bucharest, Romania",
+    points: [
+      "Worked on a large Java monolith and Spring Boot microservices.",
+      "Used Apache Kafka to debug and monitor event-driven pipelines.",
+      "Worked with REST, TCP, Sybase and Elasticsearch.",
+      "Delivered internal technical training and onboarding.",
+    ],
+  },
+];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Aida Ghergus",
+  jobTitle: "Senior Backend Engineer",
+  worksFor: { "@type": "Organization", name: "aidware", url: "https://www.aidware.dev" },
+  url: "https://www.aidware.dev/about",
+  email: "aida@aidware.dev",
+  sameAs: [
+    "https://github.com/aidaghergus",
+    "https://www.linkedin.com/in/aidaghergus/",
+  ],
+};
+---
+
+<Layout
+  title="About Aida Ghergus — aidware"
+  description="Aida Ghergus is the founder of aidware — a Senior Backend Engineer with 8+ years of experience building backend systems, distributed applications and AI-powered products."
+  ogType="profile"
+  structuredData={structuredData}
+>
+  <Nav />
+  <main class="text-[var(--white)]">
+    <!-- Intro -->
+    <section class="pt-28 md:pt-36 pb-12">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-center gap-10">
+          <div class="flex-1 space-y-4">
+            <p class="section-eyebrow">about</p>
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight">
+              Aida Ghergus<span class="text-[var(--sec)]">.</span>
+            </h1>
+            <p class="text-lg text-[var(--white-icon)]">
+              Founder & Backend / AI Engineer
+            </p>
+            <p class="text-[var(--white-icon)] leading-relaxed max-w-2xl">
+              Senior Backend Engineer with 8+ years of experience building backend
+              systems, distributed applications and AI-powered products, including
+              full-stack work with React. Experienced across Java, Python
+              and JavaScript, with recent focus on AI applications, cloud-based backend
+              development and LLM integrations. Strong background in AWS, Google Cloud,
+              Apache Kafka and modern backend technologies.
+            </p>
+            <p class="text-sm text-[var(--white)] font-medium">
+              Based between Bucharest, Romania and Marbella, Spain.
+            </p>
+            <div class="flex gap-3 pt-2 flex-wrap">
+              <a href="/contact" class="btn-primary">Get in touch</a>
+              <a href="/cv" class="btn-secondary">View CV</a>
+            </div>
+          </div>
+          <div class="flex justify-center md:justify-end flex-shrink-0">
+            <img
+              src="/me2.png"
+              alt="Aida Ghergus"
+              width="256"
+              height="256"
+              class="w-52 h-52 md:w-64 md:h-64 object-cover rounded-full border border-[var(--white-icon-tr)] shadow-lg"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder story -->
+    <section class="py-12 border-t border-[var(--white-icon-tr)]">
+      <div class="max-w-5xl mx-auto">
+        <p class="section-eyebrow">the story</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+          Why aidware<span class="text-[var(--sec)]">.</span>
+        </h2>
+        <div class="space-y-4 text-[var(--white-icon)] leading-relaxed max-w-2xl">
+          <p>
+            aidware is Aida's Romanian freelance business — a one-engineer studio
+            through which she works remotely with clients, mainly in the legal and
+            real estate space.
+          </p>
+          <p>
+            Before founding aidware, she spent years in enterprise backend
+            development: Java services at scale, event-driven pipelines with Apache
+            Kafka, and AWS cloud applications built from scratch. More recently her
+            work has centered on AI products — multi-agent applications, LLM
+            integrations and document processing pipelines.
+          </p>
+          <p>
+            What she enjoys most is owning a product end to end: from the first
+            conversation about the problem, through development, to deployment and
+            everything that keeps it running reliably afterwards.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selected experience -->
+    <section class="py-12 border-t border-[var(--white-icon-tr)]">
+      <div class="max-w-5xl mx-auto">
+        <p class="section-eyebrow">experience</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-8">
+          Selected experience<span class="text-[var(--sec)]">.</span>
+        </h2>
+        <div class="space-y-6">
+          {
+            experience.map((job) => (
+              <article class="exp-card">
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1">
+                  <h3 class="text-lg font-semibold">{job.role}</h3>
+                  <span class="text-xs text-[var(--white-icon)]" style="font-family: var(--mono);">
+                    {job.period} · {job.location}
+                  </span>
+                </div>
+                <p class="text-sm text-[var(--sec2)] font-medium mb-3" style="font-family: var(--mono);">
+                  {job.company}
+                </p>
+                {job.intro && (
+                  <p class="text-sm text-[var(--white)] font-medium mb-3">{job.intro}</p>
+                )}
+                <ul class="space-y-1.5">
+                  {job.points.map((point) => (
+                    <li class="flex items-start gap-2 text-sm text-[var(--white-icon)] leading-relaxed">
+                      <span class="text-[var(--sec)] mt-0.5 flex-shrink-0" aria-hidden="true">▸</span>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))
+          }
+        </div>
+        <p class="text-sm text-[var(--white-icon)] mt-6">
+          Earlier roles at METRO SYSTEMS Romania and the full history are on the
+          <a href="/cv" class="text-[var(--white)] font-medium underline decoration-[var(--sec)] underline-offset-4 hover:decoration-[var(--white)]">online CV</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="py-12 border-t border-[var(--white-icon-tr)]">
+      <div class="max-w-5xl mx-auto">
+        <p class="section-eyebrow">skills</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-8">
+          Technologies<span class="text-[var(--sec)]">.</span>
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {
+            skillGroups.map((group) => (
+              <div class="skill-group">
+                <h3 class="text-sm font-semibold mb-3 text-[var(--white)]" style="font-family: var(--mono); letter-spacing: 0.08em; text-transform: uppercase;">
+                  {group.title}
+                </h3>
+                <ul class="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <li class="skill-tag">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Insights />
+  <Footer />
+</Layout>
+
+<style>
+  .exp-card {
+    background: var(--bg2);
+    border: 1px solid var(--white-icon-tr);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .skill-group {
+    background: var(--bg2);
+    border: 1px solid var(--white-icon-tr);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .skill-tag {
+    font-family: var(--mono, monospace);
+    font-size: 11px;
+    color: var(--white);
+    background: var(--sec-dim);
+    border: 1px solid var(--white-icon-tr);
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.04em;
+    list-style: none;
+  }
+</style>

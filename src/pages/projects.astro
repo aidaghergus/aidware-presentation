@@ -1,0 +1,41 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import ProjectGrid from "@/components/projectGrid.astro";
+import Footer from "@/components/footer.astro";
+import { projects } from "@/data/projects";
+---
+
+<Layout
+  title="Projects — aidware"
+  description="Selected projects by aidware: AI applications, machine learning tools, chatbots and backend systems for legal and real estate clients."
+>
+  <Nav />
+  <main>
+    <section class="pt-28 md:pt-36 pb-12 text-[var(--white)]">
+      <div class="max-w-5xl mx-auto">
+        <p class="section-eyebrow">projects</p>
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+          Selected <span class="shiny-sec">work.</span>
+        </h1>
+        <p class="text-[var(--white-icon)] max-w-xl mb-10 leading-relaxed">
+          Client work and side projects — AI applications, machine learning
+          experiments and the systems behind them.
+        </p>
+
+        <ProjectGrid projects={projects} />
+
+        <div class="rounded-2xl border border-[var(--sec)] bg-[var(--bg2)] p-8 mt-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div>
+            <h2 class="text-xl md:text-2xl font-bold tracking-tight text-[var(--white)] mb-1">
+              Building something similar<span class="text-[var(--sec)]">?</span>
+            </h2>
+            <p class="text-sm text-[var(--white-icon)]">Tell me what you are trying to build.</p>
+          </div>
+          <a href="/contact" class="btn-primary flex-shrink-0">Discuss a project</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

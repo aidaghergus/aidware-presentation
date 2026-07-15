@@ -1,0 +1,67 @@
+---
+import type { Project } from "@/data/projects";
+
+interface Props {
+  projects: Project[];
+}
+
+const { projects } = Astro.props;
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  {
+    projects.map((project) => (
+      <article class="project-card group">
+        <div class="flex flex-wrap gap-2 mb-3">
+          {project.tags.map((tag) => (
+            <span class="project-tag">{tag}</span>
+          ))}
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-[var(--white)]">{project.title}</h3>
+        <p class="text-sm text-[var(--white-icon)] leading-relaxed flex-1">{project.description}</p>
+        <div class="flex items-center justify-between mt-4 pt-4 border-t border-[var(--white-icon-tr)]">
+          <span class="text-xs text-[var(--white-icon)]" style="font-family: var(--mono);">{project.status}</span>
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xs text-[var(--sec2)] hover:underline flex items-center gap-1 transition-all duration-200"
+              style="font-family: var(--mono);"
+              aria-label={`Visit ${project.title}`}
+            >
+              visit →
+            </a>
+          )}
+        </div>
+      </article>
+    ))
+  }
+</div>
+
+<style>
+  .project-card {
+    background: var(--bg2);
+    border: 1px solid var(--white-icon-tr);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+  .project-card:hover {
+    border-color: var(--white);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  }
+  .project-tag {
+    font-family: var(--mono, monospace);
+    font-size: 10px;
+    color: var(--white);
+    background: var(--sec-dim);
+    border: 1px solid var(--white-icon-tr);
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+  }
+</style>

@@ -1,32 +1,35 @@
 ---
-import Terminal from "../React/Terminal.tsx";
 import LogoWall from "../components/logoWall.astro";
-import SkillsList from "../React/SkillsList.tsx";
 ---
 
 <section class="text-[var(--white)] mt-12 md:mt-0" id="home">
-  <div class="max-w-5xl mx-auto space-y-8 md:py-36 pb-14">
+  <div class="max-w-5xl mx-auto space-y-8 md:pt-36 md:pb-10 pb-10 pt-8">
     <div class="flex flex-col md:flex-row md:items-center md:gap-12">
       <div class="text-left space-y-4 flex-1">
-        <p class="text-sm text-[var(--white-icon)]" style="font-family: var(--mono); letter-spacing: 0.12em;">
-          // java · backend · security · ai
-        </p>
-        <h1 class="text-[var(--white)] text-5xl md:text-7xl font-bold leading-none tracking-tight">
+        <p class="text-2xl font-bold tracking-tight">
           aidware<span class="text-[var(--sec)]">.</span>
-        </h1>
-        <p class="text-lg md:text-xl text-[var(--white-icon)] font-light">
-          your aid in software · <span class="text-[var(--white)] font-medium">by Aida Ghergus</span>
         </p>
-        <p class="text-base text-[var(--white-icon)] max-w-xl">
-          Software engineer with 9+ years of experience who <strong class="text-[var(--white)] font-medium">understands your needs</strong> and translates them into reliable, scalable software.
+        <p class="text-sm text-[var(--white-icon)]" style="font-family: var(--mono); letter-spacing: 0.12em;">
+          // ai · backend · cloud
+        </p>
+        <h1 class="text-[var(--white)] text-4xl md:text-6xl font-bold leading-[1.05] tracking-tight max-w-2xl">
+          Building production-ready <span class="shiny-sec">AI applications</span>.
+        </h1>
+        <p class="text-base md:text-lg text-[var(--white-icon)] max-w-xl leading-relaxed">
+          aidware develops practical AI tools, backend systems and tailored software
+          for legal and real estate businesses.
+        </p>
+        <p class="text-sm text-[var(--white-icon)]">
+          Founded by <a href="/about" class="text-[var(--white)] font-medium underline decoration-[var(--sec)] underline-offset-4 hover:decoration-[var(--white)]">Aida Ghergus</a>, Senior Backend Engineer.
         </p>
         <div class="flex gap-3 pt-2 flex-wrap">
-          <a href="#projects" class="btn-primary">View work</a>
-          <a href="#contact" class="btn-secondary">Get in touch</a>
+          <a href="/contact" class="btn-primary">Discuss a project</a>
+          <a href="/projects" class="btn-secondary">View selected work</a>
         </div>
         <div class="flex justify-start gap-2 pt-1">
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://github.com/aidaghergus"
             aria-label="GitHub"
             class="social-icon-btn"
@@ -37,6 +40,7 @@ import SkillsList from "../React/SkillsList.tsx";
           </a>
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://www.linkedin.com/in/aidaghergus/"
             aria-label="LinkedIn"
             class="social-icon-btn"
@@ -60,108 +64,14 @@ import SkillsList from "../React/SkillsList.tsx";
       <div class="hidden md:flex justify-center items-center flex-shrink-0">
         <img
           src="/me2.png"
-          alt="Aida Ghergus"
+          alt="Aida Ghergus, founder of aidware"
+          width="256"
+          height="256"
           class="w-64 h-64 object-cover rounded-full border border-[var(--white-icon-tr)] shadow-lg"
         />
       </div>
     </div>
 
     <LogoWall />
-
-    <div class="flex flex-col lg:flex-row items-start gap-8 pt-2">
-      <SkillsList client:load />
-      <div class="flex justify-center w-full">
-        <Terminal client:load />
-      </div>
-    </div>
   </div>
 </section>
-
-<style is:global>
-  .btn-primary {
-    background: var(--white);
-    color: var(--background);
-    padding: 10px 22px;
-    border-radius: 8px;
-    font-family: var(--mono, monospace);
-    font-size: 13px;
-    font-weight: 500;
-    text-decoration: none;
-    letter-spacing: 0.05em;
-    transition: all 0.2s;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .btn-primary:hover { background: #333; transform: translateY(-2px); }
-
-  .btn-secondary {
-    background: transparent;
-    color: var(--white);
-    padding: 10px 22px;
-    border-radius: 8px;
-    font-family: var(--mono, monospace);
-    font-size: 13px;
-    text-decoration: none;
-    border: 1px solid var(--white-icon-tr);
-    letter-spacing: 0.05em;
-    transition: all 0.2s;
-    display: inline-flex;
-    align-items: center;
-  }
-  .btn-secondary:hover { border-color: var(--white); transform: translateY(-2px); }
-
-  .social-icon-btn {
-    color: var(--white-icon);
-    transition: color 0.2s, background 0.2s, border-color 0.2s;
-    border: 1px solid var(--white-icon-tr);
-    padding: 10px;
-    border-radius: 10px;
-    background: var(--bg2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-  }
-  .social-icon-btn:hover { color: var(--white); border-color: var(--white); }
-
-  .shiny-sec {
-    background: linear-gradient(135deg, var(--sec) 20%, var(--sec2) 50%, var(--sec) 80%);
-    background-size: 400% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: shine 3s linear infinite;
-  }
-  @keyframes shine {
-    0%   { background-position: 100% 50%; }
-    30%, 70% { background-position: 0% 50%; }
-  }
-
-  /* Terminal — stays dark intentionally */
-  .terminal-box {
-    background: #111111;
-    border: 1px solid #2a2a2a;
-    border-radius: 12px;
-    overflow: hidden;
-    width: 100%;
-    max-width: 680px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-  }
-  .terminal-bar {
-    background: #1e1e1e;
-    padding: 10px 16px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    border-bottom: 1px solid #2a2a2a;
-  }
-  .dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
-  .terminal-title { font-size: 11px; color: #888880; margin-left: 6px; letter-spacing: 0.05em; font-family: var(--mono, monospace); }
-  .terminal-body { padding: 20px 24px; font-family: var(--mono, monospace); font-size: 14px; line-height: 2; }
-  .t-prompt { color: var(--sec); }
-  .t-cmd    { color: #f0ece4; }
-  .t-out    { color: #888880; display: block; }
-  .t-green  { color: var(--sec); display: block; }
-  .t-cursor { display: inline-block; width: 8px; height: 13px; background: var(--sec); vertical-align: middle; margin-left: 2px; }
-</style>

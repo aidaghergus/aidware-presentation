@@ -1,0 +1,27 @@
+---
+import Terminal from "../React/Terminal.tsx";
+---
+
+<section id="studio" class="py-12 border-t border-[var(--white-icon-tr)] text-[var(--white)]">
+  <div class="max-w-5xl mx-auto">
+    <div class="flex flex-col lg:flex-row lg:items-center gap-10">
+      <div class="flex-1 space-y-4">
+        <p class="section-eyebrow">the studio</p>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight">
+          Founder-led, end to end<span class="text-[var(--sec)]">.</span>
+        </h2>
+        <p class="text-[var(--white-icon)] leading-relaxed max-w-xl">
+          aidware is the independent software studio of Aida Ghergus, a senior
+          backend engineer with a background in enterprise backend systems, AWS
+          cloud applications and AI product development. She works directly with
+          clients — from the first conversation through development, deployment
+          and maintenance.
+        </p>
+        <a href="/about" class="btn-secondary">More about Aida</a>
+      </div>
+      <div class="flex justify-center w-full lg:w-auto lg:flex-1">
+        <Terminal client:load />
+      </div>
+    </div>
+  </div>
+</section>
