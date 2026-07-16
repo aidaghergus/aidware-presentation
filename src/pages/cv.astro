@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import Nav from "@/components/nav.astro";
 import Footer from "@/components/footer.astro";
+import { summary, skillGroups } from "@/data/profile";
 
 interface CvJob {
   role: string;
@@ -33,14 +34,14 @@ const jobs: CvJob[] = [
     role: "Full Stack Developer",
     company: "Qualysoft Romania (Smarttech247)",
     period: "05/2023 – 06/2025",
-    location: "Bucharest, Romania",
+    location: "Remote · Bucharest, Romania",
     points: [
       "Built a Java + Quarkus application and AWS Lambda functions from scratch, deployed on AWS.",
       "Worked primarily on backend development while also contributing to frontend features using React.",
       "Used PostgreSQL, Flyway, Docker, OpenAI and AWS services including Lambda, Cognito, CloudWatch, S3 and Amazon Q.",
       "Integrated webhooks and third-party APIs for data extraction and automation.",
       "Performed unit and integration testing using JUnit 5, Mockito and WireMock.",
-      "Collaborated with a multicultural team based in Cork, Ireland.",
+      "Collaborated remotely with a multicultural team based in Cork, Ireland, working entirely in English.",
     ],
   },
   {
@@ -137,15 +138,6 @@ const cvProjects: CvProject[] = [
     tech: ["Java", "Spring", "IBM Watson", "MySQL", "React"],
     link: "https://bitbucket.org/aidaghergus/workspace/projects/SER",
   },
-];
-
-const skillGroups: { title: string; items: string[] }[] = [
-  { title: "Languages", items: ["Java", "Python", "JavaScript"] },
-  { title: "Backend", items: ["Spring", "Quarkus", "REST APIs", "Apache Kafka", "Maven", "Gradle"] },
-  { title: "AI", items: ["Claude", "Gemini", "Vertex AI", "AI Agents", "LLM Integration", "Prompt Engineering"] },
-  { title: "Cloud & DevOps", items: ["AWS", "Google Cloud", "Firebase", "Docker", "Kubernetes", "GitHub Actions", "Jenkins", "Vercel"] },
-  { title: "Databases", items: ["PostgreSQL", "SQL", "MongoDB", "Elasticsearch", "Sybase"] },
-  { title: "Frontend", items: ["React", "Astro", "Tailwind CSS", "Redux", "Ant Design"] },
 ];
 
 const certificates = [
@@ -268,23 +260,11 @@ const structuredData = {
 
           <!-- Page 1: identity, summary, recent experience -->
           <div class="cv-pg cv-pg1">
-            <header class="cv-hero cv-block">
-              <p class="cv-eyebrow">// curriculum vitae</p>
-            </header>
-
             <!-- Summary -->
             <section class="cv-section cv-block">
+              <p class="cv-eyebrow">// curriculum vitae</p>
               <h2 class="cv-h">Summary<span class="cv-accent">.</span></h2>
-              <p class="cv-body">
-                Senior Backend Engineer with 8+ years of experience building scalable
-                backend systems, distributed applications and AI-powered products,
-                including full-stack work with React. Experienced across
-                Java, Python and JavaScript, with recent focus on AI-powered
-                applications, cloud-based backend development and LLM integrations.
-                Strong background in Google Cloud, AWS, Apache Kafka and modern backend
-                technologies. Passionate about building reliable software and
-                continuously learning emerging technologies.
-              </p>
+              <p class="cv-body">{summary}</p>
             </section>
 
             <!-- Experience (most recent) -->

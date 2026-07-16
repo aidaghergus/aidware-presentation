@@ -3,15 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import Nav from "@/components/nav.astro";
 import Insights from "@/components/insights.astro";
 import Footer from "@/components/footer.astro";
-
-const skillGroups: { title: string; items: string[] }[] = [
-  { title: "Languages", items: ["Java", "Python", "JavaScript"] },
-  { title: "Backend", items: ["Spring", "Quarkus", "REST APIs", "Apache Kafka", "Maven", "Gradle"] },
-  { title: "AI", items: ["Claude", "Gemini", "Vertex AI", "AI Agents", "LLM Integration", "Prompt Engineering"] },
-  { title: "Cloud & DevOps", items: ["AWS", "Google Cloud", "Firebase", "Docker", "Kubernetes", "GitHub Actions", "Jenkins", "Vercel"] },
-  { title: "Databases", items: ["PostgreSQL", "SQL", "MongoDB", "Elasticsearch", "Sybase"] },
-  { title: "Frontend", items: ["React", "Astro", "Tailwind CSS", "Redux", "Ant Design"] },
-];
+import { summary, skillGroups } from "@/data/profile";
 
 interface Experience {
   role: string;
@@ -31,7 +23,7 @@ const experience: Experience[] = [
     intro: "Building production-ready AI applications for legal and real estate clients.",
     points: [
       "Built AI-powered applications for multiple freelance clients.",
-      "Sole engineer responsible for the end-to-end development of Pericles.",
+      "Sole engineer responsible for the end-to-end development of Pericles, an AI platform for Spanish lawyers.",
       "Built a multi-agent AI application using JavaScript, Firebase and Vertex AI (Gemini).",
       "Evaluated and integrated LLM providers including Gemini and Claude.",
       "Developed AI chatbots for Spanish real estate platforms.",
@@ -43,14 +35,14 @@ const experience: Experience[] = [
     role: "Full Stack Developer",
     company: "Qualysoft Romania (Smarttech247)",
     period: "05/2023 – 06/2025",
-    location: "Bucharest, Romania",
+    location: "Remote · Bucharest, Romania",
     points: [
       "Built a Java and Quarkus application and AWS Lambda functions from scratch.",
       "Worked primarily on backend development and contributed to React frontend features.",
       "Used PostgreSQL, Flyway, Docker, OpenAI and AWS services including Lambda, Cognito, CloudWatch, S3 and Amazon Q.",
       "Integrated webhooks and third-party APIs.",
       "Used JUnit 5, Mockito and WireMock.",
-      "Collaborated with a multicultural team in Cork, Ireland.",
+      "Collaborated remotely with a multicultural team based in Cork, Ireland, working entirely in English.",
     ],
   },
   {
@@ -102,14 +94,7 @@ const structuredData = {
             <p class="text-lg text-[var(--white-icon)]">
               Founder & Backend / AI Engineer
             </p>
-            <p class="text-[var(--white-icon)] leading-relaxed max-w-2xl">
-              Senior Backend Engineer with 8+ years of experience building backend
-              systems, distributed applications and AI-powered products, including
-              full-stack work with React. Experienced across Java, Python
-              and JavaScript, with recent focus on AI applications, cloud-based backend
-              development and LLM integrations. Strong background in AWS, Google Cloud,
-              Apache Kafka and modern backend technologies.
-            </p>
+            <p class="text-[var(--white-icon)] leading-relaxed max-w-2xl">{summary}</p>
             <p class="text-sm text-[var(--white)] font-medium">
               Based between Bucharest, Romania and Marbella, Spain.
             </p>
