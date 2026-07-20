@@ -5,6 +5,7 @@ import Home from "@/components/home.astro";
 import Services from "@/components/services.astro";
 import ProjectGrid from "@/components/projectGrid.astro";
 import Studio from "@/components/studio.astro";
+import Contact from "@/components/contact.astro";
 import Footer from "@/components/footer.astro";
 import { projects } from "@/data/projects";
 
@@ -21,7 +22,7 @@ const structuredData = {
   founder: {
     "@type": "Person",
     name: "Aida Ghergus",
-    jobTitle: "Senior Backend Engineer",
+    jobTitle: "Senior Software Engineer",
     sameAs: [
       "https://github.com/aidaghergus",
       "https://www.linkedin.com/in/aidaghergus/",
@@ -41,7 +42,7 @@ const structuredData = {
     <Home />
     <Services />
 
-    <section id="work" class="py-12 border-t border-[var(--white-icon-tr)] text-[var(--white)]">
+    <section id="work" class="py-12 border-t border-[var(--white-icon-tr)] text-[var(--white)] scroll-mt-24">
       <div class="max-w-5xl mx-auto">
         <p class="section-eyebrow">projects</p>
         <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-10">
@@ -60,20 +61,7 @@ const structuredData = {
     </section>
 
     <Studio />
-
-    <section class="py-12 border-t border-[var(--white-icon-tr)]">
-      <div class="max-w-5xl mx-auto">
-        <div class="rounded-2xl border border-[var(--sec)] bg-[var(--bg2)] p-8 md:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <div>
-            <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-[var(--white)] mb-2">
-              Have a project in mind<span class="text-[var(--sec)]">?</span>
-            </h2>
-            <p class="text-[var(--white-icon)]">Tell me what you are trying to build.</p>
-          </div>
-          <a href="/contact" class="btn-primary flex-shrink-0">Discuss a project</a>
-        </div>
-      </div>
-    </section>
+    <Contact />
   </main>
   <Footer />
 </Layout>
