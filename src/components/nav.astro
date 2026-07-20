@@ -171,6 +171,22 @@ const isActive = (href: string) => currentPath === "/" && href === "/#home";
     rafId = null;
   }
 
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const url = new URL(link.href);
+      if (url.pathname === "/" && url.hash) {
+        const id = url.hash.slice(1);
+        const target = document.getElementById(id);
+        if (target) {
+          e.preventDefault();
+          const top = target.getBoundingClientRect().top + window.scrollY - 80;
+          window.scrollTo({ top, behavior: "smooth" });
+          history.pushState(null, "", url.hash);
+        }
+      }
+    });
+  });
+
   window.addEventListener(
     "scroll",
     () => {
